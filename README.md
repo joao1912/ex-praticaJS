@@ -1,2 +1,2 @@
 # ex-praticaJS
- praticando JavaScript basico
+ Praticando JavaScript Básico.
