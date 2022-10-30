@@ -9,23 +9,26 @@
 </head>
 <body>
     <header>
-        <h1>Hora do dia</h1>
+        <h1>Cardapio</h1>
 
     </header>
 
     <section>
         <div id = "msg">
-          aqui vai aparecer a mensagem  
+          <p>Deseja ver qual das duas opções do cardapio:</p> 
+          <input type="radio" name="cardapio" id="lanches"> Lanches
+          <input type="radio" name="cardapio" id="Bebidas"> Bebidas
+          <p><input id = "botao" type="button" value="Mostrar" onclick="mostrar()"></p>
         </div>
-        <div id = "foto">
-           <img src="fotomanha.png" alt="">
+        <div id = "resp">
+           
         </div>
 
 
     </section>
 
     <footer>
-        <p>&copy; CursoemVideo</p>
+        <p>&copy; Modelo HTML do CursoemVideo</p>
 
     </footer>
     <script src="script.js"></script>
