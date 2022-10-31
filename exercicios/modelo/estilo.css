@@ -20,6 +20,10 @@ section{
 input#botao{
     background:#a84818;
 }
+input#txtC{
+    margin: 0 auto;
+    width: 40px;
+}
 footer{
     text-align: center;
     color: rgb(14, 10, 10)4, 10, 10;
