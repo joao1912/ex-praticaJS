@@ -5,7 +5,9 @@ let refresco = {
 }
 
 let alimentos = {
-
+    lanche: [" Cachorro Quente", " Bauru Simples", " Bauru com Ovo", "Hambúrguer", "Cheeseburguer", " Pastel de Carne"],
+    preço: [" R$ 12,00", " R$ 14,00", " R$ 15,00", " R$ 16,00", " R$ 16,00" , " R$8,00"],
+    Codigo: [6,7,8,9,10]
 }
 
 let carrinho = []
@@ -23,6 +25,7 @@ function mostrar() {
     let lanches = document.getElementById("lanches")
     let resp = document.getElementById("resp")
     if (bebidas.checked) {
+        resp.innerHTML = ""
         resp.innerHTML ="<p>Opcões de bebidas a baixo:</p>"
         for ( let c=0 ; c < 6; c++) {
             resp.innerHTML += `<p>${refresco.suco[c]} | preço: ${refresco.preço[c]} | Código: ${refresco.Codigo[c]}<br/></p>`
@@ -31,19 +34,18 @@ function mostrar() {
         pedido.removeAttribute("disabled")
           
     } else if (lanches.checked) {
-
+        resp.innerHTML = ""
         resp.innerHTMl = "<p>Opcões de Lanches a baixo:</p>"
-        for (let c = 0 ; c < 4 ; c++) {
-            resp.innerHTML += ``
+        for (let c = 0 ; c < 5 ; c++) {                              //arrumar erro
+            resp.innerHTML += `<p>${alimentos[c]} | preço: ${alimentos.preço[c]} | Código: ${alimentos.Codigo[c]}<br/></p>`
         }
     }
     
 }
 function verificar() {
     if (!bebidas.checked || !laches.checked) {
-        alert("teste")
-    }
-    if (pedido.value.length == 0 || pedido.value < 0  || pedido.value > 5) {
+        alert("[erro]: antes de pedir, pressione o botão 'mostrar'.")
+    } else if (pedido.value.length == 0 || pedido.value < 0  || pedido.value > 5) {
         alert("[erro]: digite o código de algum alimento acima!.")
     } else {
         let pedVal = pedido.value
@@ -80,6 +82,6 @@ function verificar() {
                 resp_carrinho.innerHTML += ` ${carrinho} `
                 pedido.value = ""
             }    
-        }
-    }
+        } else if (lanches.checked) {alert("opaa")}
+    }   
 }
