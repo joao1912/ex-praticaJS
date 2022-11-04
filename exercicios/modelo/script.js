@@ -119,3 +119,75 @@ function verificar() {
         }
     }
 }
+
+    
+    let respTotvalor = document.getElementById("totvalor")
+function Calcular() {
+    respTotvalor.innerHTML = ``
+
+    let valortot = 0
+    let detectorCODIGO = 0
+    let valor = 0
+    
+    let quant_carrinho = carrinho.length
+    for( let c = 0 ; c < quant_carrinho ; c++) {
+        if(carrinho.indexOf(alimentos.suco[c] == 1)){
+            detectorCODIGO = alimentos.Codigo[c]
+            switch (detectorCODIGO) {
+                case 0:
+                    valor = 6
+                    valortot += valor
+                    break
+                case 1:
+                    valor = 7
+                    valortot += valor
+                    break
+                case 2:
+                    valor = 8
+                    valortot += valor
+                    break
+                case 3:
+                    valor = 9
+                    valortot += valor
+                    break
+                case 4:
+                    valor = 10
+                    valortot += valor
+                    break
+                case 5:
+                    valor = 10
+                    valortot += valor
+                    break
+                case 6:
+                    valor = 12
+                    valortot += valor
+                    break
+                case 7:
+                    valor = 14
+                    valortot += valor
+                    break
+                case 8:
+                    valor = 15
+                    valortot += valor
+                    break
+                case 9:
+                    valor = 16
+                    valortot += valor
+                    break
+                case 10:
+                    valor =  16
+                    valortot += valor
+                    break
+                case 11:
+                    valor = 8
+                    valortot += valor
+                    break
+                default:
+                    alert("erro")
+                    
+            }
+        }
+    }
+    respTotvalor.innerHTML = `valor: ${valortot}`
+    carrinho = []
+}
