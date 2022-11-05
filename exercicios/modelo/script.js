@@ -6,9 +6,13 @@ let alimentos = {
     Codigo: [0,1,2,3,4,5,6,7,8,9,10,11]
 }
 
+let alimentos_dados = {
+    preço:  [6, 7, 8, 9, 10, 10, 12, 14, 15, 16, 16, 8],
+    Codigo: [0, 1, 2, 3,  4,  5,  6,  7,  8,  9, 10, 11]
+}
+
+
 let carrinho = []
-
-
 let resp_carrinho = document.getElementById("carrin")
 let pedido = document.getElementById("txtC")
 let botaoPedir = document.getElementById("butpedir")
@@ -18,11 +22,10 @@ let bebidas = document.getElementById("Bebidas")
 let lanches = document.getElementById("lanches")
 let resp = document.getElementById("resp")
 let botaoCalcular = document.getElementById("BotCalcular")
-
+let respTotvalor = document.getElementById("totvalor")
 
 
 function mostrar() {
-    
     if (bebidas.checked) {
         resp.innerHTML = ""
         resp.innerHTML ="<p>Opcões de bebidas a baixo:</p>"
@@ -42,96 +45,104 @@ function mostrar() {
 }
 function verificar() {
         botaoCalcular.removeAttribute("disabled")
-
+        respTotvalor.innerHTML = "valor total a ser pago:"
+        
         let pedVal = pedido.value
         if (bebidas.checked) { 
             if (pedido.value.length == 0 || pedido.value < 0  || pedido.value > 5) {
-            alert("[erro]: digite o código de algum alimento acima!.")
-        } else {
-            resp_carrinho.innerHTML = "Carrinho: "
-            if (pedido.value == 0) {
-                let suco = alimentos.suco[0]
-                carrinho.push(suco)
-                resp_carrinho.innerHTML += ` ${carrinho} `
-                pedido.value = ""
-            } else if (pedVal == 1) {
-                let suco = alimentos.suco[1]
-                carrinho.push(suco)
-                resp_carrinho.innerHTML += ` ${carrinho} `
-                pedido.value = ""
-            } else if (pedVal == 2) {
-                let suco = alimentos.suco[2]
-                carrinho.push(suco)
-                resp_carrinho.innerHTML += ` ${carrinho} `
-                pedido.value = ""
-            } else if (pedVal == 3) {
-                let suco = alimentos.suco[3]
-                carrinho.push(suco)
-                resp_carrinho.innerHTML += ` ${carrinho} `
-                pedido.value = ""
-            } else if (pedVal == 4) {
-                let suco = alimentos.suco[4]
-                carrinho.push(suco)
-                resp_carrinho.innerHTML += ` ${carrinho} `
-                pedido.value = ""
-            } else if (pedVal == 5) {
-                let suco = alimentos.suco[5]
-                carrinho.push(suco)
-                resp_carrinho.innerHTML += ` ${carrinho} `
-                pedido.value = ""
-            }    
+                alert("[erro]: digite o código de algum alimento acima!.")
+            } else {
+                resp_carrinho.innerHTML = "Carrinho: "
+                if (pedido.value == 0) {
+                    let suco = alimentos.suco[0]
+                    carrinho.push(suco)
+                    resp_carrinho.innerHTML += ` ${carrinho} `
+                    pedido.value = ""
+                } else if (pedVal == 1) {
+                    let suco = alimentos.suco[1]
+                    carrinho.push(suco)
+                    resp_carrinho.innerHTML += ` ${carrinho} `
+                    pedido.value = ""
+                } else if (pedVal == 2) {
+                    let suco = alimentos.suco[2]
+                    carrinho.push(suco)
+                    resp_carrinho.innerHTML += ` ${carrinho} `
+                    pedido.value = ""
+                } else if (pedVal == 3) {
+                    let suco = alimentos.suco[3]
+                    carrinho.push(suco)
+                    resp_carrinho.innerHTML += ` ${carrinho} `
+                    pedido.value = ""
+                } else if (pedVal == 4) {
+                    let suco = alimentos.suco[4]
+                    carrinho.push(suco)
+                    resp_carrinho.innerHTML += ` ${carrinho} `
+                    pedido.value = ""
+                } else if (pedVal == 5) {
+                    let suco = alimentos.suco[5]
+                    carrinho.push(suco)
+                    resp_carrinho.innerHTML += ` ${carrinho} `
+                    pedido.value = ""
+                }    
         
-        } 
+            } 
     
-    } else if (lanches.checked) {
-        if (pedido.value.length == 0 || pedido.value < 6  || pedido.value > 11) {
-            alert("[erro]: digite o código de algum alimento acima!.")
-        } else {
-            resp_carrinho.innerHTML = "Carrinho: "
-            if (pedido.value == 6) {
-                let comida = alimentos.lanche[6]
-                carrinho.push(comida)
-                resp_carrinho.innerHTML += ` ${carrinho} `
-                pedido.value = ""
-            } else if (pedVal == 7) {
-                let comida = alimentos.lanche[7]
-                carrinho.push(comida)
-                resp_carrinho.innerHTML += ` ${carrinho} `
-                pedido.value = ""
-            } else if (pedVal == 8) {
-                let comida = alimentos.lanche[8]
-                carrinho.push(comida)
-                resp_carrinho.innerHTML += ` ${carrinho} `
-                pedido.value = ""
-            } else if (pedVal == 9) {
-                let comida = alimentos.lanche[9]
-                carrinho.push(comida)
-                resp_carrinho.innerHTML += ` ${carrinho} `
-                pedido.value = ""
-            } else if (pedVal == 10) {
-                let comida = alimentos.lanche[10]
-                carrinho.push(comida)
-                resp_carrinho.innerHTML += ` ${carrinho} `
-                pedido.value = ""
-            } else if (pedVal == 11) {
-                let comida = alimentos.lanche[11]
-                carrinho.push(comida)
-                resp_carrinho.innerHTML += ` ${carrinho} `
-                pedido.value = ""
-            }    
+        } else if (lanches.checked) {
+            if (pedido.value.length == 0 || pedido.value < 6  || pedido.value > 11) {
+                alert("[erro]: digite o código de algum alimento acima!.")
+            } else {
+                resp_carrinho.innerHTML = "Carrinho: "
+                if (pedido.value == 6) {
+                    let comida = alimentos.lanche[6]
+                    carrinho.push(comida)
+                    resp_carrinho.innerHTML += ` ${carrinho} `
+                    pedido.value = ""
+                } else if (pedVal == 7) {
+                    let comida = alimentos.lanche[7]
+                    carrinho.push(comida)
+                    resp_carrinho.innerHTML += ` ${carrinho} `
+                    pedido.value = ""
+                } else if (pedVal == 8) {
+                    let comida = alimentos.lanche[8]
+                    carrinho.push(comida)
+                    resp_carrinho.innerHTML += ` ${carrinho} `
+                    pedido.value = ""
+                } else if (pedVal == 9) {
+                    let comida = alimentos.lanche[9]
+                    carrinho.push(comida)
+                    resp_carrinho.innerHTML += ` ${carrinho} `
+                    pedido.value = ""
+                } else if (pedVal == 10) {
+                    let comida = alimentos.lanche[10]
+                    carrinho.push(comida)
+                    resp_carrinho.innerHTML += ` ${carrinho} `
+                    pedido.value = ""
+                } else if (pedVal == 11) {
+                    let comida = alimentos.lanche[11]
+                    carrinho.push(comida)
+                    resp_carrinho.innerHTML += ` ${carrinho} `
+                    pedido.value = ""
+                }    
+            }
         }
-    }
+    pedido.value = ''
+    pedido.focus()
 }
 
-    
-    let respTotvalor = document.getElementById("totvalor")
-
-    
 function Calcular() {
+    let valor = 0
+    let totvalor = 0
     respTotvalor.innerHTML = ``
-
-    //desisto, vou largar o switch e trabalhar com varios (IF)
-    
-    respTotvalor.innerHTML = `valor: ${valortot}`
-   
+    for(let cProduto = 0 ; cProduto <= alimentos.Codigo.length ; cProduto++ ) {
+        for(let cCompra = 0 ; cCompra < carrinho.length ; cCompra++ ) {
+            if (carrinho[cCompra] == alimentos.suco[cProduto]) {
+                valor = alimentos_dados.preço[cProduto]
+                totvalor += valor
+            } else if (carrinho[cCompra] == alimentos.lanche[cProduto]) {
+                valor = alimentos_dados.preço[cProduto]
+                totvalor += valor
+            } 
+        }   
+    }
+    respTotvalor.innerHTML = `valor total a ser pago: R$ ${totvalor}`
 }
