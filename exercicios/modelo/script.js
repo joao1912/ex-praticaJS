@@ -130,7 +130,7 @@ function verificar() {
 function Calcular() {
     respTotvalor.innerHTML = ``
 
-    //desisto, vou largar o switch e trabalhar com varios (IF).
+    //desisto, vou largar o switch e trabalhar com varios (IF)
     
     respTotvalor.innerHTML = `valor: ${valortot}`
    
